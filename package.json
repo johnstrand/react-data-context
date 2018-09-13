@@ -10,5 +10,10 @@
   },
   "keywords": [],
   "author": "John Strand",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.4.14",
+    "react": "^16.5.0",
+    "typescript": "^3.0.3"
+  }
 }
