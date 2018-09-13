@@ -20,6 +20,9 @@ export var ReactDataContext = (function () {
         }
         callbacks[context][name] = callback;
     };
+    var deregisterCallback = function (name) {
+        Object.keys(callbacks).forEach(function (context) { return callbacks[context][name] = undefined; });
+    };
     var invokeCallback = function (context, value) {
         if (!callbacks[context]) {
             return;
@@ -54,9 +57,9 @@ export var ReactDataContext = (function () {
             __extends(class_2, _super);
             function class_2(props) {
                 var _this = _super.call(this, props) || this;
-                _this.consumerName = generateName();
+                _this.__consumerName = generateName();
                 _this.state = { value: undefined };
-                registerCallback(props.context, _this.consumerName, function (value) { return _this.setState({ value: value }); });
+                registerCallback(props.context, _this.__consumerName, function (value) { return _this.setState({ value: value }); });
                 return _this;
             }
             class_2.prototype.render = function () {
@@ -67,7 +70,11 @@ export var ReactDataContext = (function () {
                 var value = this.state.value;
                 return render(value);
             };
+            class_2.prototype.componentWillUnmount = function () {
+                deregisterCallback(this.__consumerName);
+            };
             return class_2;
         }(React.Component))
     };
 })();
+//# sourceMappingURL=ReactDataContext.js.map
