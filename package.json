@@ -1,6 +1,6 @@
 {
   "name": "react-data-context",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/ReactDataContext.js",
   "types": "dist/ReactDataContext.d.ts",

@@ -37,15 +37,7 @@ export var ReactDataContext = (function () {
     };
     var generateName = function () { return Math.random().toString(36).substring(7); };
     return {
-        Producer: /** @class */ (function () {
-            function class_1() {
-            }
-            class_1.prototype.update = function (name, value) {
-                invokeCallback(name, value);
-            };
-            return class_1;
-        }()),
-        Service: {
+        Producer: {
             update: function (context, value) {
                 invokeCallback(context, value);
             },
@@ -54,15 +46,15 @@ export var ReactDataContext = (function () {
             }
         },
         Consumer: /** @class */ (function (_super) {
-            __extends(class_2, _super);
-            function class_2(props) {
+            __extends(class_1, _super);
+            function class_1(props) {
                 var _this = _super.call(this, props) || this;
                 _this.__consumerName = generateName();
                 _this.state = { value: undefined };
                 registerCallback(props.context, _this.__consumerName, function (value) { return _this.setState({ value: value }); });
                 return _this;
             }
-            class_2.prototype.render = function () {
+            class_1.prototype.render = function () {
                 var render = this.props.children;
                 if (!render || typeof render !== "function") {
                     throw "Consumer must have single child of type function";
@@ -70,10 +62,10 @@ export var ReactDataContext = (function () {
                 var value = this.state.value;
                 return render(value);
             };
-            class_2.prototype.componentWillUnmount = function () {
+            class_1.prototype.componentWillUnmount = function () {
                 deregisterCallback(this.__consumerName);
             };
-            return class_2;
+            return class_1;
         }(React.Component))
     };
 })();

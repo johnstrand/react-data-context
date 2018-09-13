@@ -8,11 +8,6 @@ interface IConsumerProps {
 }
 export declare const ReactDataContext: {
     Producer: {
-        new (): {
-            update(name: string, value: any): void;
-        };
-    };
-    Service: {
         update: (context: string, value: any) => void;
         register: (context: string, callback: Callback) => void;
     };
