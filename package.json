@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/johnstrand/react-data-context"
   },
+  "scripts": {
+    "build": "node ./node_modules/typescript/bin/tsc"
+  },
   "keywords": [],
   "author": "John Strand",
   "license": "MIT",
