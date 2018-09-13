@@ -1,0 +1,14 @@
+{
+  "name": "react-data-context",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/ReactDataContext.js",
+  "types": "dist/ReactDataContext.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnstrand/react-data-context"
+  },
+  "keywords": [],
+  "author": "John Strand",
+  "license": "MIT"
+}
