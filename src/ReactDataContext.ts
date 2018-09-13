@@ -43,12 +43,7 @@ export const ReactDataContext = (() => {
     const generateName = (): string => Math.random().toString(36).substring(7);
 
     return {
-        Producer: class {
-            update(name: string, value: any) {
-                invokeCallback(name, value);
-            }
-        },
-        Service: {
+        Producer: {
             update: (context: string, value: any) => {
                 invokeCallback(context, value);
             },
