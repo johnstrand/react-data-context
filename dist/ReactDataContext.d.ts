@@ -5,6 +5,7 @@ interface IConsumerState {
 }
 interface IConsumerProps {
     context: string;
+    initalState?: any;
 }
 export declare const ReactDataContext: {
     Producer: {

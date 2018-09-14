@@ -50,7 +50,7 @@ export var ReactDataContext = (function () {
             function class_1(props) {
                 var _this = _super.call(this, props) || this;
                 _this.__consumerName = generateName();
-                _this.state = { value: undefined };
+                _this.state = { value: props.initalState };
                 registerCallback(props.context, _this.__consumerName, function (value) { return _this.setState({ value: value }); });
                 return _this;
             }
