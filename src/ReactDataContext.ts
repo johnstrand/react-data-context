@@ -1,6 +1,7 @@
 import * as React from "react";
 
 type Callback = (value: any) => void;
+type TypedCallback<T> = (value: T) => void;
 type SubscriberCallback = { [key: string]: Callback; }
 type ContextCallback = { [key: string]: SubscriberCallback };
 type Render = (value: any) => JSX.Element;
@@ -47,7 +48,7 @@ export const ReactDataContext = (() => {
             update: (context: string, value: any) => {
                 invokeCallback(context, value);
             },
-            register: (context: string, callback: Callback) => {
+            register: <T>(context: string, callback: TypedCallback<T>) => {
                 registerCallback(context, "__service", callback);
             }
         },

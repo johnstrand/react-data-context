@@ -1,5 +1,5 @@
 import * as React from "react";
-declare type Callback = (value: any) => void;
+declare type TypedCallback<T> = (value: T) => void;
 interface IConsumerState {
     value?: any;
 }
@@ -9,7 +9,7 @@ interface IConsumerProps {
 export declare const ReactDataContext: {
     Producer: {
         update: (context: string, value: any) => void;
-        register: (context: string, callback: Callback) => void;
+        register: <T>(context: string, callback: TypedCallback<T>) => void;
     };
     Consumer: {
         new (props: IConsumerProps): {
