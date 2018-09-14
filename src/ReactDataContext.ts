@@ -12,6 +12,7 @@ interface IConsumerState {
 
 interface IConsumerProps {
     context: string;
+    initalState?: any;
 }
 
 export const ReactDataContext = (() => {
@@ -57,7 +58,7 @@ export const ReactDataContext = (() => {
             constructor(props: IConsumerProps) {
                 super(props);
                 this.__consumerName = generateName();
-                this.state = { value: undefined };
+                this.state = { value: props.initalState };
                 registerCallback(props.context, this.__consumerName, value => this.setState({ value }));
             }
 
