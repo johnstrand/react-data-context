@@ -1,6 +1,6 @@
 {
   "name": "react-data-context",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React's data context, just made global",
   "main": "dist/ReactDataContext.js",
   "types": "dist/ReactDataContext.d.ts",

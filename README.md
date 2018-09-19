@@ -8,7 +8,7 @@ To consume a context, here is a sample class (with TypeScript annotations):
 
 ```typescript
 import * as React from "react";
-import { ReactDataContext } from "react-data-context";
+import * as ReactDataContext from "react-data-context";
 
 export class ConsumerSample extends React.Component<{}, {}> {
   public render() {
@@ -26,7 +26,7 @@ And to produce:
 import * as React from "react";
 import { render } from "react-dom";
 import { ConsumerSample } from "./ConsumerSample";
-import { ReactDataContext } from "react-data-context";
+import * as ReactDataContext from "react-data-context";
 
 interface AppState {
   name: string;
