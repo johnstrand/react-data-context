@@ -13,9 +13,10 @@ interface IConsumerState {
 interface IConsumerProps {
     context: string;
     initalState?: any;
+    children: TypedCallback<any>;
 }
 
-export const ReactDataContext = (() => {
+const ReactDataContext = (() => {
     const callbacks: ContextCallback = {};
 
     const registerCallback = (context: string, name: string, callback: Callback) => {
@@ -35,7 +36,7 @@ export const ReactDataContext = (() => {
         }
         Object.keys(callbacks[context]).forEach(name => {
             const cb = callbacks[context][name];
-            if(!cb) {
+            if (!cb) {
                 return;
             }
             cb(value);
@@ -79,3 +80,5 @@ export const ReactDataContext = (() => {
         }
     }
 })();
+
+export const { Consumer, Producer } = ReactDataContext;
