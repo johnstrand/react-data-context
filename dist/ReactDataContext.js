@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import * as React from "react";
-export var ReactDataContext = (function () {
+var ReactDataContext = (function () {
     var callbacks = {};
     var registerCallback = function (context, name, callback) {
         if (!callbacks[context]) {
@@ -69,4 +69,5 @@ export var ReactDataContext = (function () {
         }(React.Component))
     };
 })();
+export var Consumer = ReactDataContext.Consumer, Producer = ReactDataContext.Producer;
 //# sourceMappingURL=ReactDataContext.js.map
